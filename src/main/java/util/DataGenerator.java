@@ -36,7 +36,11 @@ public class DataGenerator {
 
     /** Сгенерировать тестовый email */
     public static String testUserEmail() {
-            return "testuser-" + generateDigitalString(7) + "@" + PropertyLoader.loadProperties().getProperty("testDomain");
+            return
+                    "testuser-"
+                    + generateDigitalString(7)
+                    + "@"
+                    + PropsManager.Load.testProperties().getProperty("testDomain");
     }
 
     private static String buildString(String symbolsSet, int length) {

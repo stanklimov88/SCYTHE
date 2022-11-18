@@ -2,10 +2,11 @@
 
 > The Most Beautiful Testing Framework You Have Ever Seen
 
-No bullshit, only what you need
-- Selenium for browser automation
-- Selenide for simplicity and stability
-- And one Cucumber to [rule them all](https://github.com/tsundberg/gradle-cucumber-runner)
+No bullshit, only what you need:
+- **Selenium** for browser automation
+- **Selenide** for simplicity and stability
+- **RestAssured** for boosting-up durability
+- And one **Cucumber** to [rule them all](https://github.com/tsundberg/gradle-cucumber-runner)
 
 Provided with fully functional test project, so you can understand the basics and play around a little
 

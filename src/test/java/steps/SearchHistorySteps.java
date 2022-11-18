@@ -3,8 +3,8 @@ package steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
+import util.PropsManager;
 
-import static util.PropertyLoader.loadProperties;
 import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.Condition.*;
 import static pageobject.SearchPage.*;
@@ -68,7 +68,7 @@ public class SearchHistorySteps {
     @When("проверочный запрос в истории отображается верхним")
     public void lastQueryIsOnTop() {
         historyItem().shouldHave(
-                text(loadProperties().getProperty("testSearchQuery"))
+                text(PropsManager.Load.testProperties().getProperty("testSearchQuery"))
         );
     }
 

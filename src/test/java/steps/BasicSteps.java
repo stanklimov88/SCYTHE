@@ -4,17 +4,18 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 
 import io.cucumber.java.en.Given;
+import util.PropsManager;
+
 import java.util.Objects;
 
 import static com.codeborne.selenide.Selenide.clearBrowserCookies;
 import static com.codeborne.selenide.Selenide.open;
-import static util.PropertyLoader.loadProperties;
 
 public class BasicSteps {
 
     public static void setup() {
-        if (Objects.equals(Configuration.baseUrl, loadProperties().getProperty("localHost"))) {
-            Configuration.baseUrl = loadProperties().getProperty("baseUrl");
+        if (Objects.equals(Configuration.baseUrl, PropsManager.Load.testProperties().getProperty("localHost"))) {
+            Configuration.baseUrl = PropsManager.Load.testProperties().getProperty("baseUrl");
         }
     }
 

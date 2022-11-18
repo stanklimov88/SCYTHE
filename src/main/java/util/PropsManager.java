@@ -4,9 +4,15 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public class PropertyLoader {
+public class PropsManager {
 
-    public static Properties loadProperties() {
+    public interface Load {
+           static Properties testProperties() {
+             return loadProperties();
+         }
+    }
+
+    private static Properties loadProperties() {
         FileInputStream instream;
         Properties props = new Properties();
         try {

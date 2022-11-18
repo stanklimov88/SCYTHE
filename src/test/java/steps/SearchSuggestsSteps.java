@@ -3,8 +3,8 @@ package steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import util.PropsManager;
 
-import static util.PropertyLoader.loadProperties;
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.CollectionCondition.sizeLessThanOrEqual;
 import static com.codeborne.selenide.Condition.*;
@@ -63,7 +63,7 @@ public class SearchSuggestsSteps {
 
     @Then("- подсказка подставлена в поисковую строку")
     public void suggestTypedIntoSearchInput() {
-        String queryText = loadProperties().getProperty("testSearchQuery");
+        String queryText = PropsManager.Load.testProperties().getProperty("testSearchQuery");
         searchInput().shouldHave(partialValue(queryText));
         searchInput().shouldNotHave(exactValue(queryText));
     }

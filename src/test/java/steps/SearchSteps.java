@@ -3,11 +3,11 @@ package steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
+import util.PropsManager;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.open;
 import static util.DataGenerator.generateLiteralCyrillicString;
-import static util.PropertyLoader.loadProperties;
 import static pageobject.SearchPage.*;
 import static pageobject.SearchResultsPage.*;
 import static pageobject.OnscreenKeyboardPopup.*;
@@ -33,7 +33,7 @@ public class SearchSteps {
 
     @When("- вводим проверочный поисковой запрос")
     public static void typingSearchQuery() {
-        searchInput().setValue(loadProperties().getProperty("testSearchQuery"));
+        searchInput().setValue(PropsManager.Load.testProperties().getProperty("testSearchQuery"));
     }
 
     @When("- вводим рандомный текст в поисковую строку")
