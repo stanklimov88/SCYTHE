@@ -16,6 +16,8 @@ public class PropsManager {
         FileInputStream instream;
         Properties props = new Properties();
         try {
+            // this is a template property-file
+            // create your own property-file and keep it outside of version control
             instream = new FileInputStream("src/main/resources/scythe.properties");
             props.load(instream);
         } catch (IOException e) {

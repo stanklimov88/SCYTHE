@@ -1,0 +1,7 @@
+**/*.log
+Dockerfile
+.git
+.gitignore
+.gradle/
+.idea/
+.DS_Store

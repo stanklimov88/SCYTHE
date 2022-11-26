@@ -34,8 +34,11 @@ dependencies {
 
 cucumber {
     glue = 'steps'
+    extraGlues = ['test/steps']
     featurePath = 'src/test/resources'
     plugin = ['pretty', "html:build/reports/cucumber-report.html", "timeline:build/reports/execution-timeline"]
+
+    main = 'io.cucumber.core.cli.Main'
 }
 
 test {

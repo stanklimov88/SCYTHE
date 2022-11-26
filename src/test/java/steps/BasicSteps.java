@@ -19,6 +19,10 @@ public class BasicSteps {
         }
     }
 
+    public static void setRemote() {
+        Configuration.remote = "http://localhost:4444/";
+    }
+
     @Given("- открываем стартовую страницу")
     public void openStartPage() {
         setup();
