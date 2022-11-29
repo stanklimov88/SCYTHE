@@ -3,12 +3,13 @@
 > The Most Beautiful Testing Framework You Have Ever Seen
 
 No bullshit, only what you need:
-- **Selenium** for browser automation
+- **Selenium** for browser handling
 - **Selenide** for simplicity and stability
-- **RestAssured** for boosting-up durability
+- **RestAssured** for speeding-up and reliability
 - And one **Cucumber** to [rule them all](https://github.com/tsundberg/gradle-cucumber-runner)
 
-Provided with fully functional test project, so you can understand the basics and play around a little
+Provided with fully functional **Docker**-ready test project, so you can understand the basics and play around a little
+
 
 ### Run it
 
@@ -34,7 +35,7 @@ Provided with fully functional test project, so you can understand the basics an
     ./gradlew clean cucumber -Dselenide.browser=safari
 
 
-### Run it against different environments
+### Run it against all your environments
 
     ./gradlew clean cucumber -Dselenide.baseUrl=https://your-staging-server.com/
 
