@@ -36,7 +36,7 @@ public class BasicSteps {
     }
 
     public void checkErrors() {
-        // adjust errors for checking by commenting this lines
+        // adjust error-check by commenting lines below
         not404();
         not500();
     }
