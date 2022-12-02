@@ -4,6 +4,13 @@ import java.util.Random;
 
 public class DataGenerator {
 
+    public static String generateRandomPassword() {
+        return  generateLiteralString(1)
+                + generateDigitalString(3)
+                + generateLiteralString(3)
+                + generateSpecialCharactersString(1);
+    }
+
     /** Сгенерировать рандомную цифровую строку указанной длины */
     public static String generateDigitalString(int length) {
         return buildString("digital", length);
@@ -16,7 +23,7 @@ public class DataGenerator {
 
     /** Сгенерировать рандомную буквенную строку указанной длины, включая буквы в верхнем регистре */
     public static String generateLiteralUpString(int length) {
-        return buildString("literalWithUppercase", length);
+        return buildString("literalUppercase", length);
     }
 
     /** Сгенерировать рандомную кириллическую строку указанной длины */
@@ -26,7 +33,7 @@ public class DataGenerator {
 
     /** Сгенерировать рандомную кириллическую строку указанной длины, включая буквы в верхнем регистре */
     public static String generateLiteralCyrillicUpString(int length) {
-        return buildString("cyrillicWithUppercase", length);
+        return buildString("cyrillicUppercase", length);
     }
 
     /** Сгенерировать рандомную строку из спецсимволов указанной длины */
@@ -36,11 +43,11 @@ public class DataGenerator {
 
     /** Сгенерировать тестовый email */
     public static String testUserEmail() {
-            return
-                    "testuser-"
-                    + generateDigitalString(7)
-                    + "@"
-                    + PropsManager.Load.testProperties().getProperty("testDomain");
+        return
+                "testuser-"
+                        + generateDigitalString(7)
+                        + "@"
+                        + PropsManager.Load.testProperties().getProperty("autotestUserDomain");
     }
 
     private static String buildString(String symbolsSet, int length) {
@@ -60,12 +67,12 @@ public class DataGenerator {
                 return "0123456789";
             case "literal":
                 return "abcdefghijklmnopqrstuvwxyz";
-            case "literalWithUppercase":
-                return "ABCDEFGHIJKLMNOPRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+            case "literalUppercase":
+                return "ABCDEFGHIJKLMNOPRSTUVWXYZ";
             case "cyrillic":
                 return "абвгдеёжзийклмнопрстуфхцчшщьыъэюя";
-            case "cyrillicWithUppercase":
-                return "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЬЫЪЭЮЯабвгдеёжзийклмнопрстуфхцчшщьыъэюя";
+            case "cyrillicUppercase":
+                return "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЬЫЪЭЮЯ";
             case "special":
                 return "/:<>(){}''@#$%^&*_+!?";
             default:
